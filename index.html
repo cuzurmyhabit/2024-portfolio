@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">Null</a>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#career">Career</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="main-header">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>안녕하세요! 지난 어제에 미련을 갖지 않고 매일 성장하는 개발자 지수민입니다.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about-section">
+            <h1><strong>About Me</strong></h1>
+            <div class="about-container">
+                <div class="profile-image-wrapper">
+                    <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+                    <span class="developer-badge">Developer</span>
+                </div>
+                
+                <ul class="contact-links">
+                    <li><a href="mailto:s2472@e-mirim.hs.kr">e-mail</a></li>
+                    <li><a href="https://github.com/cuzurmyhabit" target="_blank">GitHub</a></li>
+                    <li><a href="https://velog.io/@cuzurmyhabit/posts" target="_blank">Velog</a></li>
+                    <li><a href="https://www.instagram.com/izowuiw/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="about-me">
+                <p>지수민 Soomin-Ji</p>
+                <p>2008.02.16</p>
+                <p>at Mirim Meister School</p>
+            </div>
+
+            <div class="about-description">
+                <p><strong>Frontend 및 앱 개발</strong>을 깊이 있게 다져나가고자 하는 <strong>학생 개발자</strong> 지수민입니다.</p>
+                <p>Backend에도 관심을 가지며 분야를 가리지 않고 적극적으로 개발에 대한 관심사를 넓혀나가고 있습니다.</p>
+                <blockquote>
+                    "현재의 힘듦이 행복의 거름이 되어 훗날 웃으며 누구보다 예쁘게 피어나기를"
+                </blockquote>
+                <p>매일 생각하며 열심히 전공 지식을 배우고, 또 익히며 발전해 나가고 있습니다. </p>
+                <p>살아가는 많은 오늘들은 모두 가장 지식이 옅은 날로 남기고 내일은 조금의 발전을 더 이루는 나날을 만들어가고 싶습니다. </p>
+                <P>실패를 두려워 하지 않고 스스로에게 새로운 과제를 내며 계속해서 발전해 나갈 기회를 만들고자 합니다.</P>
+                <p>넓고 넓은 세계에서 한 마리의 고래가 되어 열심히 헤엄쳐 보겠습니다!</p>
+            </div>
+        </section>
+
+
+        <section id="career" class="section career-section">
+            <h2 class="section-title">Career</h2>
+            <div class="career-container">
+                <div class="career-item" data-animate="fade-in">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li><strong>정보처리기능사</strong> - 2024년 01월 취득</li>
+                        <li><strong>컴퓨터활용능력 2급</strong> - 2023년 12월 취득</li>
+                        <li><strong>ITQ 한글</strong> - 2023년 02월 취득</li>
+                    </ul>
+                </div>
+                <div class="career-item" data-animate="fade-in">
+                    <h3>Awards</h3>
+                    <ul>
+                        <li><strong>2023 소프트웨어 경진대회</strong> - 대상</li>
+                        <li><strong>2022 해커톤 대회</strong> - 최우수상</li>
+                        <li><strong>디자인 공모전</strong> - 입선</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="projects" class="section projects-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                </div>
+                <div class="project-card">
+                    <h3>E-commerce Store</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2>Contact</h2>
+            <p>Email: s2472@e-mirim.hs.kr</p>
+            <p>Phone: 010-4997-4639</p>
+            <p>
+                <a href="https://www.instagram.com/izowuiw/" target="_blank">Instagram</a> |
+                <a href="https://github.com/cuzurmyhabit" target="_blank">GitHub</a> |
+                <a href="https://velog.io/@cuzurmyhabit/posts" target="_blank">Velog</a>
+            </p>
+        </section>
+    </main>
+
+
+    <footer class="main-footer">
+        <p>&copy; 2024 My Portfolio. Built with love and creativity.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const sections = document.querySelectorAll('.section');
+            const projectCards = document.querySelectorAll('.project-card');
+            const careerItems = document.querySelectorAll('.career-item'); // Career 항목 추가
+
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.scrollY;
+
+                if (currentScroll > 100) {
+                    navbar.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                }
+
+                sections.forEach(section => {
+                    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+                        section.classList.add('visible');
+                    }
+                });
+
+                projectCards.forEach(card => {
+                    if (card.getBoundingClientRect().top < window.innerHeight - 100) {
+                        card.classList.add('visible');
+                    }
+                });
+
+                careerItems.forEach(item => {
+                    if (item.getBoundingClientRect().top < window.innerHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
